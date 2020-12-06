@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/descargar"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/textViewMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="19dp"
+        android:alpha="1"
+        android:background="#99070707"
+        android:gravity="center_horizontal"
+        android:textColor="#CCFDFCFC"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:alpha="0.75"
+        android:background="#1D405A"
+        android:fontFamily="@font/fredoka_one"
+        android:onClick="startCreateActivity"
+        android:text="@string/crear_factura"
+        app:backgroundTint="#571F2A"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSpendingPlaces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMainTitle" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="145dp"
+        android:alpha="0.75"
+        android:background="#1D405A"
+        android:fontFamily="@font/fredoka_one"
+        android:onClick="startDeleteActivity"
+        android:text="@string/eliminar_factura"
+        app:backgroundTint="#571F2A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUpdate" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:alpha="0.75"
+        android:background="#1D405A"
+        android:fontFamily="@font/fredoka_one"
+        android:onClick="startUpdateActivity"
+        android:text="@string/actualizar_factura"
+        app:backgroundTint="#571F2A"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSearch" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.75"
+        android:background="#1D405A"
+        android:fontFamily="@font/fredoka_one"
+        android:onClick="startSearchActivity"
+        android:text="@string/buscar_factura"
+        app:backgroundTint="#571F2A"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSpendingPlaces" />
+
+    <Button
+        android:id="@+id/buttonSpendingPlaces"
+        android:layout_width="206dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:alpha="0.75"
+        android:background="#1D405A"
+        android:fontFamily="@font/fredoka_one"
+        android:onClick="startPlacesActivity"
+        android:text="@string/ver_lugares_de_compra"
+        app:backgroundTint="#571F2A"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCreate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
