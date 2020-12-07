@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="locations">
+        <item>Adeje</item>
+        <item>Buenavista del Norte</item>
+        <item>Candelaria</item>
+        <item>Granadilla de Abona</item>
+        <item>Guía de Isora</item>
+        <item>Güimar</item>
+        <item>La Laguna</item>
+        <item>La Orotava</item>
+        <item>Puerto de la Cruz</item>
+        <item>Santa Cruz</item>
+    </string-array>
+</resources>

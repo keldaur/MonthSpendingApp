@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">MonthSpendingApp</string>
     <string name="gestor_de_gasto_mensual">Gestor de gasto mensual</string>
-    <string name="crear_factura">Crear Factura</string>
     <string name="eliminar_factura">Eliminar Factura</string>
     <string name="actualizar_factura">Actualizar Factura</string>
     <string name="buscar_factura">Buscar Factura</string>
     <string name="ver_lugares_de_compra">Lugares de Compra</string>
     <string name="todo">TODO</string>
     <string name="title_activity_maps">Map</string>
+    <string name="introduzca_la_descripci_n_de_la_compra">Descripción</string>
+    <string name="valor_de_compra">Valor de compra</string>
+    <string name="a_adir">Añadir</string>
+    <string name="crear_factura">Crear Factura</string>
+    <string name="elija_ubicaci_n">Elija ubicación</string>
 </resources>

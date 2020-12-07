@@ -13,7 +13,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table facturas (id int, descripcion text, precio real)");
+        db.execSQL("create table facturas (id int primary key AUTOINCREMENT, descripcion text, precio real, latitud real, longitud real)");
     }
 
     @Override
