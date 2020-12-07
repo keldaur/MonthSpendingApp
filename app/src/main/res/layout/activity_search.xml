@@ -19,4 +19,91 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/descargar" />
+
+    <TextView
+        android:id="@+id/textViewSearchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="50dp"
+        android:background="#800B6002"
+        android:text="@string/buscar_factura"
+        android:textColor="#FAF7F7"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/etIDSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etIDSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="58dp"
+        android:background="#900F658E"
+        android:ems="10"
+        android:hint="@string/introduzca_id"
+        android:inputType="number"
+        android:textColor="#FAF7F7"
+        android:textColorHint="#B3B1B1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btSearchSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSearchTitle" />
+
+    <Button
+        android:id="@+id/btSearchSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="search"
+        android:text="@string/buscar"
+        android:textColor="#FAF7F7"
+        android:textSize="30sp"
+        app:backgroundTint="#C4571F2A"
+        app:layout_constraintBottom_toTopOf="@+id/tvDescripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIDSearch" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="#743AA189"
+        android:textColor="#FAF7F7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrecio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSearchSearch" />
+
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="#743AA189"
+        android:textColor="#FAF7F7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvLugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+    <TextView
+        android:id="@+id/tvLugar"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="#743AA189"
+        android:textColor="#FAF7F7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrecio" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

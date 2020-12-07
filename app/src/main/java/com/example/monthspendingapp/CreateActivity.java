@@ -33,7 +33,6 @@ public class CreateActivity extends AppCompatActivity {
     private final LatLng GRANADILLA = new LatLng(28.118935157787234, -16.577358641392763);
     private final LatLng GUIMAR = new LatLng(28.319751518924367, -16.408424103578888);
     private final LatLng CANDELARIA = new LatLng(28.3557200849151, -16.371055425807842);
-    private String [] locations;
 
 
 
@@ -43,15 +42,15 @@ public class CreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create);
         editTextTextMultiLine = findViewById(R.id.editTextTextMultiLine);
         editTextNumberDecimal = findViewById(R.id.editTextNumberDecimal);
-        locationSelector = findViewById(R.id.spinnerLocations);
-        Resources res = getResources();
-        locations = res.getStringArray(R.array.locations);
+        initLocations();
+    }
+
+    public LatLng getLocationLatLng(int locationIndex){
+        return locationLats.get(locationIndex);
     }
 
     public void initLocations(){
         locationSelector = findViewById(R.id.spinnerLocations);
-        Resources res = getResources();
-        locations = res.getStringArray(R.array.locations);
         locationLats = new ArrayList<>();
         locationLats.add(ADEJE);
         locationLats.add(BUENA_VISTA);
@@ -63,19 +62,6 @@ public class CreateActivity extends AppCompatActivity {
         locationLats.add(LA_OROTAVA);
         locationLats.add(PUERTO_CRUZ);
         locationLats.add(SANTA_CRUZ);
-        //Al seleccionar moverá la cámara a esa localización
-        locationSelector.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                int index = parent.getSelectedItemPosition();
-                
-
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
     }
 
     public void addBill(View view){
@@ -84,15 +70,32 @@ public class CreateActivity extends AppCompatActivity {
         String desc = editTextTextMultiLine.getText().toString();
         double price = Double.parseDouble(editTextNumberDecimal.getText().toString());
         String location = locationSelector.getSelectedItem().toString();
-        double
         ContentValues contentvalues = new ContentValues();
         contentvalues.put("descripcion",desc);
         contentvalues.put("precio",price);
-
-        if(db.insert("facturas",null,contentvalues) != -1){
-            Toast.makeText(this, "Se ha añadido con éxito", Toast.LENGTH_SHORT).show();
+        contentvalues.put("lugar",location);
+        if(areFieldsValid()){
+            if(db.insert("facturas",null,contentvalues) != -1){
+                Toast.makeText(this, "Se ha añadido con éxito", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this,"No se ha podido añadir el registro", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this,"No se ha podido añadir el registro", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Algunos campos no se han rellenado bien", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public boolean areFieldsFilled(){
+        return !editTextNumberDecimal.getText().toString().equals("") &&
+                !editTextTextMultiLine.getText().toString().equals("");
+    }
+
+    public boolean isPrice(){
+        return editTextNumberDecimal.getText().toString().matches("^[0-9]+[.]?[0-9]{0,2}$");
+    }
+
+    public boolean areFieldsValid(){
+        return areFieldsFilled() && isPrice();
     }
 }

@@ -12,4 +12,6 @@
     <string name="a_adir">Añadir</string>
     <string name="crear_factura">Crear Factura</string>
     <string name="elija_ubicaci_n">Elija ubicación</string>
+    <string name="introduzca_id">Introduzca ID</string>
+    <string name="buscar">Buscar</string>
 </resources>
